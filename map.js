@@ -1,67 +1,72 @@
 ymaps.ready(init)
-function init() {
-  var location = ymaps.geolocation;
-  var myMap = new ymaps.Map('map', {
+async function init () {
+  const location = ymaps.geolocation
+  const myMap = new ymaps.Map('map', {
     center: [55.76, 37.64],
     zoom: 10,
+    controls: ['zoomControl', 'geolocationControl', 'routeButtonControl']
   }, {
     searchControlProvider: 'yandex#search'
-  });
+  })
 
   // Получение местоположения и автоматическое отображение его на карте.
   location.get({
-      mapStateAutoApply: true
+    mapStateAutoApply: true
   })
-  .then(
-  function(result) {
-      // Получение местоположения пользователя.
-      var userAddress = result.geoObjects.get(0).properties.get('text');
-      var userCoodinates = result.geoObjects.get(0).geometry.getCoordinates();
-      // Пропишем полученный адрес в балуне.
-      result.geoObjects.get(0).properties.set({
+    .then(
+      function (result) {
+        // Получение местоположения пользователя.
+        const userAddress = result.geoObjects.get(0).properties.get('text')
+        const userCoodinates = result.geoObjects.get(0).geometry.getCoordinates()
+        // Пропишем полученный адрес в балуне.
+        result.geoObjects.get(0).properties.set({
           balloonContentBody: 'Адрес: ' + userAddress +
-                              '<br/>Координаты:' + userCoodinates
-                            });
-      myMap.geoObjects.add(result.geoObjects)
-  },
-  function(err) {
-      console.log('Ошибка: ' + err)
-  });
-  //Создаем коллекцию геообъектов (Можно переделать в массив)
-  var myGeoObjects = new ymaps.GeoObjectCollection({}, {
+            '<br/>Координаты:' + userCoodinates
+        })
+        myMap.geoObjects.add(result.geoObjects)
+      },
+      function (err) {
+        console.log('Ошибка: ' + err)
+      })
+
+  // Создаем коллекцию геообъектов (Можно переделать в массив)
+  const myGeoObjects = new ymaps.GeoObjectCollection({}, {
     strokeWidth: 4,
     geodesic: true
-  });
-  //Создаем кластерер
-  var clusterer = new ymaps.Clusterer({
+  })
+
+  // Создаем кластерер
+  const clusterer = new ymaps.Clusterer({
     preset: 'islands#darkGreenClusterIcons'
-  });
+  })
+
   // Добавим в коллекцию метки.
-  myGeoObjects.add(new ymaps.Placemark([55.694843, 37.435023], {
-    balloonContent: 'каток',
-    iconCaption: 'покатушки'
-  }));
-  myGeoObjects.add(new ymaps.Placemark([55.70, 37.475023]));
-  myGeoObjects.add(new ymaps.Placemark([55.699843, 37.435823]));
-  myGeoObjects.add(new ymaps.Placemark([55.604843, 37.435083]));
-  myGeoObjects.add(new ymaps.Placemark([55.6988843, 37.43]));
-  myGeoObjects.add(new ymaps.Placemark([55.690843, 37.4351]));
-  myGeoObjects.add(new ymaps.Placemark([55.694003, 37.44]));
-  myGeoObjects.add(new ymaps.Placemark([55.695053, 37.25]));
+  const Points = await fetch('http://84.201.153.211:8080/api/rinks?latitude=1&longitude=1&radius=10000')
+    .then(response => response.json())
+    .then(json => json.map(j => {
+      const obj = {
+        id: j.id,
+        coords: [j.latitude, j.longitude],
+        name: j.name
+      }
+      return obj
+    }))
 
-  //Переведем коллекцию в массив
-  var newMyGeo = myGeoObjects.toArray();
+  Points.forEach(p => myGeoObjects.add(new ymaps.Placemark(p.coords, {
+    balloonContent: p.name
+  })))
 
-  //Центрирование экрана при нажатии на метку
+  // Переведем коллекцию в массив
+  const newMyGeo = myGeoObjects.toArray()
+
+  // Центрирование экрана при нажатии на метку
   for (let i = 0; i < myGeoObjects.getLength(); i++) {
     newMyGeo[i].events.add('click', function () {
-      myMap.setCenter(newMyGeo[i].geometry.getCoordinates(),myMap.getZoom());
-    });
+      myMap.setCenter(newMyGeo[i].geometry.getCoordinates(), myMap.getZoom())
+    })
   }
 
   // Добавим коллекцию на карту.
-  myMap.geoObjects.add(clusterer);
-  clusterer.add(newMyGeo);
-  // Установим карте центр и масштаб так, чтобы охватить коллекцию целиком.
-  //myMap.setBounds(myGeoObjects.getBounds());
+  myMap.geoObjects.add(clusterer)
+  clusterer.add(newMyGeo)
 }
