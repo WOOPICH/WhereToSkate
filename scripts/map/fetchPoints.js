@@ -27,9 +27,8 @@ async function getPoints(myGeoObjects) {
     }));
 
     Points.forEach(p => myGeoObjects.add(new ymaps.Placemark(p.coords, {
-      balloonContentHeader: `<style> .name{text-decoration: none; font-size: 15pt;}</style>
-              <a class="name" href = "#"> ${p.name} </a><br>` +
-              `<i style="font-size:20px" class="fa">&#9733;</i> <span>${p.rating.toFixed(1)}</span><hr>`,
+      balloonContentHeader: `${nameParse(p.name, p.web)}<br>` +
+              `<b style="font-size:20px">&#9733;</b> <span>${p.rating.toFixed(1)}</span><hr>`,
       balloonContentBody: `<center><img src="res/img.jpg" height="250" width="400"></center>` +
               `<div style="font-size: 11pt">&#8194;<i style="font-size:20px" class="fa">&#xf095;</i>&#8195;${phoneParse(p.phone)}</div>` +
               `<div style="font-size: 11pt">&#8194;<i style="font-size:20px" class="fa">&#xf0ac;</i>&#8195;${webParse(p.web)}</div><hr>` +

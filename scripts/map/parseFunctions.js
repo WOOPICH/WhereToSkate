@@ -27,6 +27,15 @@ function isFree(free) {
   }
 };
 
+function nameParse(name, web) {
+  if (web != null)
+    return `<style> .name{text-decoration: none; font-size: 15pt;}</style>
+            <a class="name" href="${web}">${name}</a>`
+  else
+    return `<style> .name{text-decoration: none; font-size: 15pt;}</style>
+            <b class="name">${name}</b>`
+}
+
 function Hours(hours) {
   let string = ``;
   for (let i = 0; i < hours.length; i++) {
