@@ -21,8 +21,8 @@ function webParse(web) {
 
 function isFree(free) {
   switch (free) {
-    case 0: return `Нет`;
-    case 1: return `Да`;
+    case 0: return `Платный`;
+    case 1: return `Бесплатный`;
     default: break;
   }
 };
@@ -50,7 +50,7 @@ function Hours(hours) {
       string += `, `
     }
     else {
-      string += `.`
+      string += ``
     }
   }
   return string;

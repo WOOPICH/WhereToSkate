@@ -1,6 +1,7 @@
-﻿async function getPoints(myGeoObjects) {
+﻿let Points;
+async function getPoints(myGeoObjects) {
 
-  const Points = await fetch('http://84.201.153.211:8080/api/rinks?latitude=1&longitude=1&radius=10000')
+  Points = await fetch('http://84.201.153.211:8080/api/rinks?latitude=1&longitude=1&radius=10000')
     .then(response => response.json())
     .then(json => json.map(j => {
         const obj = {
@@ -31,11 +32,11 @@
 }
 
 async function getInfo(point) {
-  const id = await fetch(`http://84.201.153.211:8080/api/rinks?latitude=${point[0]}&longitude=${point[1]}`) //HELP
-    .then(response => response.json())
-    .then(function(data) {
-      return data[0].id;
-    });
+  let id;
+  for (let i = 0; i < Points.length; i++) {
+    if (point == Points[i].coords)
+      id = Points[i].id;
+  }
   const info = await fetch(`http://84.201.153.211:8080/api/rink/${id}`) //HELP
     .then(response => response.json())
     .then(json => [json].map(j => {
@@ -58,4 +59,23 @@ async function getInfo(point) {
     }));
 
   console.log(info);
+  let firstGeoObject;
+
+
+  document.getElementsByClassName('card-image')[0].innerHTML = '<img src="../images/img.jpg" alt="kek max-width: 100%; max-height: 100%;" >';
+  document.getElementById('name').innerHTML = `${nameParse(info[0].name,info[0].web)}`;
+  ymaps.geocode(point).then(async function (result) {
+    firstGeoObject = result.geoObjects.get(0).getAddressLine();
+    document.getElementById('address').innerHTML = `${firstGeoObject}`;
+  });
+  document.getElementById('hours').innerHTML = `${Hours(info[0].openHours)}`;
+  document.getElementById('web').innerHTML = `${webParse(info[0].web)}`;
+  document.getElementById('phone').innerHTML = `${phoneParse(info[0].phone)}`;
+  document.getElementById('rating').innerHTML = `${info[0].rating.toFixed(1)}`;
+  document.getElementById('type').innerHTML = `${typeOf(info[0].type)}`;
+  document.getElementById('free').innerHTML = `${isFree(info[0].free)}`;
+  document.getElementById('warm_room').innerHTML = `${isThereSomething(info[0].warm_room)}`;
+  document.getElementById('rent').innerHTML = `${isThereSomething(info[0].rent)}`;
+  document.getElementById('sharp').innerHTML = `${isThereSomething(info[0].sharp)}`;
+  document.getElementById('parking').innerHTML = `${isThereSomething(info[0].parking)}`;
 }
