@@ -1,0 +1,78 @@
+.wrapper {
+    position: relative;
+    top: 0;
+    height: 100vh;
+}
+
+.sidebar {
+    position: fixed;
+    padding: 0px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 220px;
+    display: block;
+    z-index: 1;
+    color: #fff;
+    font-weight: 500;
+    background-size: cover;
+    background-position: center center;
+    background-image: url(../images/back_ground_image.jpg);
+}
+
+a:link {
+  text-decoration:none;
+  color: white !important;
+}
+
+a:visited {
+  text-decoration: none;
+  color: white !important;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.name:a:hover {
+  text-decoration: none;
+  color: black !important;
+}
+
+a:active {
+  text-decoration: none;
+  color:white !important;
+}
+
+ul>li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-left: 5px solid white;
+    color: white;
+    padding-left: 15px;
+}
+
+ul{
+   padding-left: 0px;
+}
+
+li{
+  padding-left: 15px;
+}
+
+.brand-icon{
+  width:50px;
+  height:50px;
+  margin-top:10px;
+  margin-left: 10px;
+  border-radius: 100%;
+  display: inline-block;
+}
+
+.card{
+  margin-bottom: 10px;
+}
+
+.info{
+  width: 100px;
+}

@@ -48,13 +48,14 @@ async function init () {
 
   // Центрирование экрана при нажатии на метку + добавление адреса к каждой точке
   for (let i = 0; i < myGeoObjects.getLength(); i++) {
-    ymaps.geocode(newMyGeo[i].geometry.getCoordinates()).then(function (result) {
+    /*ymaps.geocode(newMyGeo[i].geometry.getCoordinates()).then(function (result) {
       firstGeoObject = result.geoObjects.get(0).getAddressLine();
       newMyGeo[i].properties.set({
         balloonContentFooter: `${firstGeoObject}`
-      });})
-    newMyGeo[i].events.add('click', function () {
-      myMap.setCenter(newMyGeo[i].geometry.getCoordinates(), myMap.getZoom())
+      });})*/
+    newMyGeo[i].events.add('click',async function () {
+      myMap.setCenter(newMyGeo[i].geometry.getCoordinates(), myMap.getZoom());
+      await getInfo(newMyGeo[i].geometry.getCoordinates());
     });
   }
 

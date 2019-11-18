@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/skate.ico" />
+    <!--Fontawesome CDN-->
+	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="mapPage.css" rel="stylesheet">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=7d2b470a-6054-4651-9f7b-c71ff4a193fe" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="scripts/map.js" type="text/javascript"></script>
+    <script src="scripts/parseFunctions.js" type="text/javascript"></script>
+    <script src="scripts/fetchPoints.js" type="text/javascript"></script>
+    <!--<base target="_blank">-->
+    <title>Главная-Where2Skate</title>
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="wrapper">
+       <div class="sidebar">
+           <div class="sidebar-wrapper">
+               <div class="logo">
+                 <a class="navbar-brand" href="../mapPage/mapPage.html">
+                   <img src="../images/icon.jpg" class="align-top brand-icon" alt="">
+                     <p style="margin-left:80px, display: inline-block">Where2Skate</p>
+                 </a>
+               </div>
+               <hr>
+               <ul class="nav">
+                   <li class="nav-item ">
+                       <a class="nav-link" href="../mapPage/mapPage.html">
+                           <p>Карта</p>
+                       </a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link" href="../nearestRinksPage/nearestRinksPage.html">
+                           <p>Ближайшие катки</p>
+                       </a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link" href="../myRinksPage/myRinksPage.html">
+                           <p>Мои катки</p>
+                       </a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link" href="../addRinksPage/addRinksPage.html">
+                           <p>Добавить каток</p>
+                       </a>
+                   </li>
+               </ul>
+           </div>
+       </div>
+       <!-- Main content -->
+       <div class="container-fluid">
+               <div class="container">
+                   <div class="row">
+                       <div class="col-md-8 col-sm-4">
+                           <form class="form" method="" action="">
+                             <div class="card">
+                                    <div id="map" style="width: 750px; height: 600px; margin: auto"></div>
+                              </div>
+                           </form>
+                       </div>
+                       <div class="col-md-4">
+                           <div class="card">
+                               <div class="card-image">
+                                 <p>Фото катка здесь</p>
+                                 <img alt="">
+                               </div>
+                           </div>
+                           <div class="card">
+                              <h5>Название катка</h5>
+                              <div>
+                                <i class="fas fa-map-marker-alt"></i>
+                                Адрес катка
+                              </div>
+                              <div class="row">
+                                <div class="col">
+                                  <i class="fas fa-globe"></i>
+                                  Сайт
+                                </div>
+                                <div class="col">
+                                  <i class="fas fa-phone"></i>
+                                  Телефон
+                                </div>
+                             </div>
+                           </div>
+                           <div class="card">
+                            <i class="fas fa-star"></i>
+                            3.7
+                           </div>
+                           <div class="card">
+                               <div>
+                                 Естественный
+                               </div>
+                               <div>
+                                 Бесплатный
+                               </div>
+                             </div>
+                             <div class="row">
+                               <div class="col">
+                                 <i class="fas fa-clock"></i>
+                               </div>
+                               <div class="col">
+                                 Расписание
+                               </div>
+                             </div>
+                             <div class="row">
+                               <div class="col">
+                                 Раздевалка
+                               </div>
+                               <div class="col">
+                                 Есть
+                               </div>
+                             </div>
+                             <div class="row">
+                               <div class="col">
+                                 Прокат коньков
+                               </div>
+                               <div class="col">
+                                 Есть
+                               </div>
+                             </div>
+                             <div class="row">
+                               <div class="col">
+                                 Заточка коньков
+                               </div>
+                               <div class="col">
+                                 Есть
+                               </div>
+                             </div>
+                             <div class="row">
+                               <div class="col">
+                                 Парковка
+                               </div>
+                               <div class="col">
+                                 Есть
+                               </div>
+                             </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+            <footer class="footer">
+                <div class="container">
+                    <nav>
+                        <ul class="footer-menu">
+                            <li>
+                                <a href="#">
+                                    Github
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Mobile version
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="copyright text-center">
+                            ©
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                            Александр, ЧСВ, Аутист и Бука
+                        </p>
+                    </nav>
+                </div>
+            </footer>
+        </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.js"></script>
+  </body>
+</html>
