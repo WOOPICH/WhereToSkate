@@ -110,3 +110,7 @@ li{
 .info{
   width: 100px;
 }
+
+.name{
+  font-family: 'Monoton', cursive;
+}
