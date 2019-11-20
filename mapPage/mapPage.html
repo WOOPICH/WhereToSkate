@@ -1,14 +1,20 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/skate.ico" />
     <!--Fontawesome CDN-->
 	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link href="mapPage.css" rel="stylesheet">
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=7d2b470a-6054-4651-9f7b-c71ff4a193fe" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="scripts/map.js" type="text/javascript"></script>
+    <script src="scripts/parseFunctions.js" type="text/javascript"></script>
+    <script src="scripts/fetchPoints.js" type="text/javascript"></script>
+    <!--<base target="_blank">-->
     <title>Главная-Where2Skate</title>
     <!-- Bootstrap -->
     <link href="../css/bootstrap.css" rel="stylesheet">
@@ -16,33 +22,33 @@
 
   <body>
     <div class="wrapper">
-       <div class="sidebar">
+       <div class="sidebar nav flex-md-column flex-row justify-content-between">
            <div class="sidebar-wrapper">
                <div class="logo">
                  <a class="navbar-brand" href="../mapPage/mapPage.html">
                    <img src="../images/icon.jpg" class="align-top brand-icon" alt="">
-                     <p style="margin-left:80px, display: inline-block">Where2Skate</p>
+                     <p class="main-link" style="margin-left:80px, display: inline-block">Where2Skate</p>
                  </a>
                </div>
                <hr>
                <ul class="nav">
                    <li class="nav-item ">
-                       <a class="nav-link" href="../mapPage/mapPage.html">
+                       <a class="nav-link main-link" href="../mapPage/mapPage.html">
                            <p>Карта</p>
                        </a>
                    </li>
                    <li class="nav-item">
-                       <a class="nav-link" href="../nearestRinksPage/nearestRinksPage.html">
+                       <a class="nav-link main-link" href="../nearestRinksPage/nearestRinksPage.html">
                            <p>Ближайшие катки</p>
                        </a>
                    </li>
                    <li class="nav-item">
-                       <a class="nav-link" href="../myRinksPage/myRinksPage.html">
+                       <a class="nav-link main-link" href="../myRinksPage/myRinksPage.html">
                            <p>Мои катки</p>
                        </a>
                    </li>
                    <li class="nav-item">
-                       <a class="nav-link" href="../addRinksPage/addRinksPage.html">
+                       <a class="nav-link main-link" href="../addRinksPage/addRinksPage.html">
                            <p>Добавить каток</p>
                        </a>
                    </li>
@@ -50,49 +56,46 @@
            </div>
        </div>
        <!-- Main content -->
-       <div class="container-fluid">
-               <div class="container">
-                   <div class="row">
-                       <div class="col-md-8 col-sm-6">
+       <div class="main">
+
                            <form class="form" method="" action="">
-                             <div class="card">
-                                    <div id="map" style="width: 600px; height: 400px; margin: auto"></div>
+                             <div class="map">
+                                    <div id="map"></div>
                               </div>
                            </form>
-                       </div>
-                       <div class="col-md-4">
+                       <div class="main-card">
                            <div class="card">
-                               <div class="card-image">
-                                 <img src="../images/back_ground_image.jpg" wigth="50px" height="40px" alt="...">
+                               <div id="image" class="card-image" style="text-align: center">
+                                 <p>Фото катка здесь</p>
                                </div>
                            </div>
                            <div class="card">
-                              <h5>Название катка</h5>
+                              <h5 id="name">Название катка</h5>
                               <div>
                                 <i class="fas fa-map-marker-alt"></i>
-                                Адрес катка
+                                <a id="address" style="text-decoration: none; color: black important!">Адрес катка</a>
                               </div>
                               <div class="row">
                                 <div class="col">
                                   <i class="fas fa-globe"></i>
-                                  Сайт
+                                  <a id="web" style="text-decoration: none; color: black important!">Сайт</a>
                                 </div>
                                 <div class="col">
-                                  <i class="fas fa-phone-alt"></i>
-                                  Телефон
+                                  <i class="fas fa-phone"></i>
+                                  <a id="phone" style="text-decoration: none; color: black important!">Телефон</a>
                                 </div>
                              </div>
                            </div>
                            <div class="card">
                             <i class="fas fa-star"></i>
-                            3.7
+                            <a id="rating" style="text-decoration: none; color: black important!">3.7</a>
                            </div>
                            <div class="card">
                                <div>
-                                 Естественный
+                                 <a id="type" style="text-decoration: none; color: black important!">Естественный</a>
                                </div>
                                <div>
-                                 Бесплатный
+                                 <a id="free" style="text-decoration: none; color: black important!">Бесплатный</a>
                                </div>
                              </div>
                              <div class="row">
@@ -100,7 +103,7 @@
                                  <i class="fas fa-clock"></i>
                                </div>
                                <div class="col">
-                                 Расписание
+                                 <a id="hours" style="text-decoration: none; color: black important!">Расписание</a>
                                </div>
                              </div>
                              <div class="row">
@@ -108,7 +111,7 @@
                                  Раздевалка
                                </div>
                                <div class="col">
-                                 Есть
+                                 <a id="warm_room" style="text-decoration: none; color: black important!">Есть</a>
                                </div>
                              </div>
                              <div class="row">
@@ -116,7 +119,7 @@
                                  Прокат коньков
                                </div>
                                <div class="col">
-                                 Есть
+                                 <a id="rent" style="text-decoration: none; color: black important!">Есть</a>
                                </div>
                              </div>
                              <div class="row">
@@ -124,7 +127,7 @@
                                  Заточка коньков
                                </div>
                                <div class="col">
-                                 Есть
+                                 <a id="sharp" style="text-decoration: none; color: black important!">Есть</a>
                                </div>
                              </div>
                              <div class="row">
@@ -132,15 +135,13 @@
                                  Парковка
                                </div>
                                <div class="col">
-                                 Есть
+                                 <a id="parking" style="text-decoration: none; color: black important!">Есть</a>
                                </div>
                              </div>
                            </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-            <footer class="footer">
+
+
+            <div class="myfooter">
                 <div class="container">
                     <nav>
                         <ul class="footer-menu">
@@ -164,13 +165,13 @@
                         </p>
                     </nav>
                 </div>
-            </footer>
+            </div>
+            </div>
         </div>
-
+</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../js/bootstrap.js"></script>
-    <script src="map.js"></script>
   </body>
 </html>

@@ -11,7 +11,7 @@ async function init () {
 
   // Получение местоположения и автоматическое отображение его на карте.
   location.get({
-    mapStateAutoApply: true
+    mapStateAutoApply: false
   })
     .then(
       function (result) {
@@ -40,30 +40,18 @@ async function init () {
     preset: 'islands#darkGreenClusterIcons'
   })
 
-  // Добавим в коллекцию метки.
-  const Points = await fetch('http://84.201.153.211:8080/api/rinks?latitude=1&longitude=1&radius=10000')
-    .then(response => response.json())
-    .then(json => json.map(j => {
-      const obj = {
-        id: j.id,
-        coords: [j.latitude, j.longitude],
-        name: j.name
-      }
-      return obj
-    }))
-
-  Points.forEach(p => myGeoObjects.add(new ymaps.Placemark(p.coords, {
-    balloonContent: p.name
-  })))
+  // Забираем точки с сервера
+  await getPoints(myGeoObjects);
 
   // Переведем коллекцию в массив
   const newMyGeo = myGeoObjects.toArray()
 
-  // Центрирование экрана при нажатии на метку
+  // Центрирование экрана при нажатии на метку + добавление адреса к каждой точке
   for (let i = 0; i < myGeoObjects.getLength(); i++) {
-    newMyGeo[i].events.add('click', function () {
-      myMap.setCenter(newMyGeo[i].geometry.getCoordinates(), myMap.getZoom())
-    })
+    newMyGeo[i].events.add('click',async function () {
+      myMap.setCenter(newMyGeo[i].geometry.getCoordinates(), myMap.getZoom());
+      await getInfo(newMyGeo[i].geometry.getCoordinates());
+    });
   }
 
   // Добавим коллекцию на карту.
