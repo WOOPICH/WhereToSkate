@@ -3,7 +3,7 @@ background-image: url(../images/back_ground_image.jpg);
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
-font-family: 'Numans', sans-serif;
+font-family: 'Montserrat', sans-serif;
 }
 
 .container{
@@ -22,11 +22,6 @@ background-color: rgba(0,0,0,0.5) !important;
 font-size: 60px;
 margin-left: 10px;
 color: #FFCC99;
-}
-
-.social_icon span:hover{
-color: white;
-cursor: pointer;
 }
 
 .card-header h3{
@@ -86,6 +81,6 @@ a:active {
   vertical-align: middle;
 }
 
-.name{
+.main_name{
   font-family: 'Monoton', cursive;
 }
