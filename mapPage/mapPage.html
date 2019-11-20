@@ -22,33 +22,33 @@
 
   <body>
     <div class="wrapper">
-       <div class="sidebar">
+       <div class="sidebar nav flex-md-column flex-row justify-content-between">
            <div class="sidebar-wrapper">
                <div class="logo">
                  <a class="navbar-brand" href="../mapPage/mapPage.html">
                    <img src="../images/icon.jpg" class="align-top brand-icon" alt="">
-                     <p style="margin-left:80px, display: inline-block">Where2Skate</p>
+                     <p class="main-link" style="margin-left:80px, display: inline-block">Where2Skate</p>
                  </a>
                </div>
                <hr>
                <ul class="nav">
                    <li class="nav-item ">
-                       <a class="nav-link" href="../mapPage/mapPage.html">
+                       <a class="nav-link main-link" href="../mapPage/mapPage.html">
                            <p>Карта</p>
                        </a>
                    </li>
                    <li class="nav-item">
-                       <a class="nav-link" href="../nearestRinksPage/nearestRinksPage.html">
+                       <a class="nav-link main-link" href="../nearestRinksPage/nearestRinksPage.html">
                            <p>Ближайшие катки</p>
                        </a>
                    </li>
                    <li class="nav-item">
-                       <a class="nav-link" href="../myRinksPage/myRinksPage.html">
+                       <a class="nav-link main-link" href="../myRinksPage/myRinksPage.html">
                            <p>Мои катки</p>
                        </a>
                    </li>
                    <li class="nav-item">
-                       <a class="nav-link" href="../addRinksPage/addRinksPage.html">
+                       <a class="nav-link main-link" href="../addRinksPage/addRinksPage.html">
                            <p>Добавить каток</p>
                        </a>
                    </li>
@@ -56,19 +56,16 @@
            </div>
        </div>
        <!-- Main content -->
-       <div class="container-fluid">
-               <div class="container">
-                   <div class="row">
-                       <div class="col-md-8 col-sm-4">
+       <div class="main">
+
                            <form class="form" method="" action="">
-                             <div class="card">
-                                    <div id="map" style="width: 700px; height: 800px;"></div>
+                             <div class="map">
+                                    <div id="map"></div>
                               </div>
                            </form>
-                       </div>
-                       <div class="col-md-4">
+                       <div class="main-card">
                            <div class="card">
-                               <div id="image" class="card-image">
+                               <div id="image" class="card-image" style="text-align: center">
                                  <p>Фото катка здесь</p>
                                </div>
                            </div>
@@ -142,11 +139,9 @@
                                </div>
                              </div>
                            </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-            <footer class="footer">
+
+
+            <div class="myfooter">
                 <div class="container">
                     <nav>
                         <ul class="footer-menu">
@@ -170,9 +165,10 @@
                         </p>
                     </nav>
                 </div>
-            </footer>
+            </div>
+            </div>
         </div>
-
+</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

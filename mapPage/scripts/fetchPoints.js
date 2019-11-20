@@ -30,7 +30,7 @@ async function getPoints(myGeoObjects) {
   }
  */
 }
-
+let count = 0;
 async function getInfo(point) {
   let id;
   for (let i = 0; i < Points.length; i++) {
@@ -62,7 +62,7 @@ async function getInfo(point) {
   let firstGeoObject;
 
 
-  document.getElementsByClassName('card-image')[0].innerHTML = '<img src="../images/img.jpg" alt="kek max-width: 100%; max-height: 100%;" >';
+  document.getElementsByClassName('card-image')[0].innerHTML = `<img src="../images/img${count}.jpg" alt="kek" style="width: 400px; height: 250px;" >`;
   document.getElementById('name').innerHTML = `${nameParse(info[0].name,info[0].web)}`;
   ymaps.geocode(point).then(async function (result) {
     firstGeoObject = result.geoObjects.get(0).getAddressLine();
@@ -78,4 +78,8 @@ async function getInfo(point) {
   document.getElementById('rent').innerHTML = `${isThereSomething(info[0].rent)}`;
   document.getElementById('sharp').innerHTML = `${isThereSomething(info[0].sharp)}`;
   document.getElementById('parking').innerHTML = `${isThereSomething(info[0].parking)}`;
+  if (count < 5)
+    count++;
+  else
+    count = 0;
 }
