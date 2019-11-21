@@ -32,6 +32,12 @@ body, html{
   margin: 2%;
 }
 
+.card-icon{
+  width: 7%;
+  height: 7%;
+  margin: 2%;
+}
+
 .myfooter {
   padding-top: 50px;
   margin-bottom: 0px;
@@ -66,25 +72,22 @@ body, html{
   color:white ;
 }
 
-a:hover {
+a, h5:hover {
   text-decoration: none;
   color: #2c1f30 !important;
 }
 
-a {
+a, h5 {
   text-decoration: none;
   color: #2c1f30 !important;
 }
 
-.sidebar-menu{
-  ul>li:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-      border-left: 5px solid white;
-      color: white;
-      padding-left: 15px;
-  }
+ul>li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-left: 5px solid white;
+    color: white;
+    padding-left: 15px;
 }
-
 
 .sidebar-ul{
    padding-left: 0px;
@@ -105,8 +108,10 @@ a {
 
 .card{
   margin-bottom: 1%;
+  margin-top: 1%;
   margin-left: 25px;
   margin-right: 25px;
+  padding: 3%;
 }
 
 .map-card {
@@ -116,7 +121,7 @@ a {
   z-index: 1;
   margin-top: 80px;
   margin-left: 30px;
-  padding-bottom: -25px;
+  margin-bottom: 0px;
 }
 
 .info{
