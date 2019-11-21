@@ -27,8 +27,8 @@ body, html{
 }
 
 .icon{
-  width: 10%;
-  height: 10%;
+  width: 12%;
+  height: 12%;
   margin: 2%;
 }
 
@@ -87,6 +87,11 @@ ul>li:hover {
     border-left: 5px solid white;
     color: white;
     padding-left: 15px;
+}
+
+li, ul{
+  margin: 0px;
+  padding: 0px;
 }
 
 .sidebar-ul{

@@ -62,7 +62,7 @@ async function getInfo(point) {
   let firstGeoObject;
 
 
-  document.getElementsByClassName('card-image')[0].innerHTML = `<img src="../images/img${count}.jpg" alt="kek" style="width: 400px; height: 250px;" >`;
+  document.getElementsByClassName('card-image')[0].innerHTML = `<img src="../images/img${count}.jpg" alt="kek" style="width: 100%; height: auto;" >`;
   document.getElementById('name').innerHTML = `${nameParse(info[0].name,info[0].web)}`;
   ymaps.geocode(point).then(async function (result) {
     firstGeoObject = result.geoObjects.get(0).getAddressLine();
