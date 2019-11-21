@@ -1,5 +1,5 @@
 body, html {
-  background-color: #f7f7f8 !important;
+  background-color: #f2e9ef !important;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -15,18 +15,25 @@ body, html {
 }
 
 .card {
-  margin-bottom: 1%;
-  margin-top: 1%;
-  margin-left: 25px;
-  margin-right: 25px;
-  padding: 3%;
+  background-color: #f2e9ef !important;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 1%;
 }
 
 .map-card {
+  background-color: #602941 !important;
   height: 100%;
   width: 100%;
   z-index: 1;
   margin-top: 80px;
   margin-left: 30px;
-  margin-bottom: 0px;
+}
+
+.out {
+    background-color: #602941 !important;
+    font-weight: 500;
+    color: #602941;
 }
