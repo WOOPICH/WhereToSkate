@@ -32,23 +32,23 @@
                     <p class="main-link" style="margin-left:30px">Where2Skate</p>
                 </a>
               </div>
-              <ul class="nav">
-                  <li class="nav-item ">
+              <ul class="nav sidebar-ul">
+                  <li class="nav-item sidebar-li">
                       <a class="nav-link main-link" href="../mapPage/mapPage.html">
                           <p>Карта</p>
                       </a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item sidebar-li">
                       <a class="nav-link main-link" href="../nearestRinksPage/nearestRinksPage.html">
                           <p>Ближайшие катки</p>
                       </a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item sidebar-li">
                       <a class="nav-link main-link" href="../myRinksPage/myRinksPage.html">
                           <p>Мои катки</p>
                       </a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item sidebar-li">
                       <a class="nav-link main-link" href="../addRinksPage/addRinksPage.html">
                           <p>Добавить каток</p>
                       </a>
@@ -58,7 +58,7 @@
        </div>
        <div class="main-panel">
          <!-- Navbar -->
-         <div class="container">
+         <header class="container">
            <nav class="navbar navbar-expand-lg">
              <div class="collapse navbar-collapse justify-content-end">
                  <ul class="navbar-nav ml-auto">
@@ -72,13 +72,24 @@
                              <img class="icon" src="../images/icons/admin.png"/>
                          </a>
                      </li>
-                     <li class="nav-item dropdown">
-                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                     <li class="nav-item">
+                         <a class="nav-link" href="#"  data-toggle="modal" data-target="#exampleModalCenter">
                              <img class="icon" src="../images/icons/synchro.png"/>
                          </a>
-                         <ul class="dropdown-menu">
-                             <a class="dropdown-item" href="#">Синхронизировать данные?</a>
-                         </ul>
+                         <!-- Modal -->
+                          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLongTitle">Синхронизировать данные?</h5>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Нет</button>
+                                  <button type="button" class="btn btn-primary"  data-dismiss="modal">Да</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                      </li>
                      <li class="nav-item dropdown">
                          <a class="nav-link dropdown-toggle" href="../loginPage/loginPage.html" data-toggle="dropdown">
@@ -91,7 +102,7 @@
                  </ul>
              </div>
            </nav>
-         </div>
+         </header>
          <!-- Main content -->
          <div class="content">
            <div class="row">
