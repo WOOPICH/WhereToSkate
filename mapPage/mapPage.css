@@ -1,12 +1,11 @@
-.wrapper {
-    position: relative;
-    top: 0;
-    height: 100vh;
+body, html{
+  background-color: #f7f7f8 !important;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .sidebar {
     height: 100%;
-    width: 200px;
+    width: 15%;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -20,37 +19,36 @@
     background-image: url(../images/back_ground_image.jpg);
 }
 
-.main {
-  margin-left: 200px;
-  margin-right: 400px;
+.navbar{
+  background-color: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  height: 50px;
+  width: 100%;
+}
+
+.icon{
+  width: 10%;
+  height: 10%;
+  margin: 2%;
+}
+
+.card-icon{
+  width: 7%;
+  height: 7%;
+  margin: 2%;
 }
 
 .myfooter {
   padding-top: 50px;
   margin-bottom: 0px;
-  margin-left: 205px;
-  margin-right: 400px;
+  margin-left: 15%;
+  margin-right: 25%;
   bottom: 0;
 }
 
-.main-card {
-  height: 100%;
-  width: 400px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  padding-left: 0px;
-}
-
 #map {
-  max-width: 100%;
-  max-height: 80%;
-  min-width: 30%;
-  min-height: 30%;
-  width: 1800px;
-  height: 1000px;
-  padding-right: 0px;
+  width: 100%;
+  height: 500px;
 }
 
 .main-link {
@@ -69,14 +67,19 @@
   color: white;
 }
 
-a:hover {
-  text-decoration: none;
-  color: black !important;
-}
-
 .main-link:active {
   text-decoration: none;
   color:white ;
+}
+
+a, h5:hover {
+  text-decoration: none;
+  color: #2c1f30 !important;
+}
+
+a, h5 {
+  text-decoration: none;
+  color: #2c1f30 !important;
 }
 
 ul>li:hover {
@@ -86,11 +89,11 @@ ul>li:hover {
     padding-left: 15px;
 }
 
-ul{
+.sidebar-ul{
    padding-left: 0px;
 }
 
-li{
+.sidebar-li{
   padding-left: 15px;
 }
 
@@ -105,8 +108,26 @@ li{
 
 .card{
   margin-bottom: 1%;
+  margin-top: 1%;
+  margin-left: 25px;
+  margin-right: 25px;
+  padding: 3%;
+}
+
+.map-card {
+  height: 100%;
+  width: 100%
+  position: fixed;
+  z-index: 1;
+  margin-top: 80px;
+  margin-left: 30px;
+  margin-bottom: 0px;
 }
 
 .info{
   width: 100px;
+}
+
+.brand-name{
+  font-family: 'Monoton', cursive;
 }
