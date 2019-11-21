@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="../images/skate.ico" />
+  <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link href="myRinksPage.css" rel="stylesheet">
+  <link href="../css/sideBar.css" rel="stylesheet">
+  <link href="../css/footer.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/2e38b560d7.js" crossorigin="anonymous"></script>
+  <!--<base target="_blank">-->
+  <title>Мои катки-Where2Skate</title>
+  <!-- Bootstrap -->
+  <link href="../css/bootstrap.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-wrapper">
+        <div class="logo">
+          <a class="navbar-brand brand-name" href="../mapPage/mapPage.html">
+            <p class="main-link">Where2Skate</p>
+          </a>
+        </div>
+        <ul class="nav sidebar-ul">
+          <li class="nav-item sidebar-li">
+            <a class="nav-link main-link" href="../mapPage/mapPage.html">
+              <p>Карта</p>
+            </a>
+          </li>
+          <li class="nav-item sidebar-li">
+            <a class="nav-link main-link" href="../nearestRinksPage/nearestRinksPage.html">
+              <p>Ближайшие катки</p>
+            </a>
+          </li>
+          <li class="nav-item sidebar-li">
+            <a class="nav-link main-link" href="../myRinksPage/myRinksPage.html">
+              <p>Мои катки</p>
+            </a>
+          </li>
+          <li class="nav-item sidebar-li">
+            <a class="nav-link main-link" href="../addRinksPage/addRinksPage.html">
+              <p>Добавить каток</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <header class="container">
+        <nav class="navbar navbar-expand-lg">
+          <div class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link">
+                  <img class="icon" src="../images/icons/user.png"><b>Имя пользователя</b>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="admin" title="Moderator feature" href="#">
+                  <img class="icon" src="../images/icons/admin.png" />
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="synchro" title="Synchro feature" href="#" data-toggle="modal" data-target="#exampleModalCenter">
+                  <img class="icon" src="../images/icons/synchro.png" />
+                </a>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Синхронизировать данные?</h5>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Нет</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Да</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="exit" title="Exit" href="../loginPage/loginPage.html" data-toggle="dropdown">
+                  <img class="icon" src="../images/icons/exit.png" />
+                </a>
+                <ul class="dropdown-menu">
+                  <a class="dropdown-item" href="../loginPage/loginPage.html">Войти?</a>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+    </div>
+  </div>
+  <div class="myfooter">
+    <div class="container">
+      <nav>
+        <ul class="footer-menu">
+          <li>
+            <a href="https://github.com/VarHastra/Where2Skate">
+              Github (Android)
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/WOOPICH/WhereToSkate">
+              Github (Web)
+            </a>
+          </li>
+          <li>
+            <a href="https://trello.com/b/bMnOB4af/where2skate">
+              Trello
+            </a>
+          </li>
+        </ul>
+        <p class="copyright text-center">
+          ©
+          <script>
+            document.write(new Date().getFullYear())
+          </script>
+          Александр, ЧСВ, Аутист и Бука
+        </p>
+      </nav>
+    </div>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="../js/bootstrap.js"></script>
+</body>
+
+</html>

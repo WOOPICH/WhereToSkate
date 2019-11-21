@@ -1,0 +1,72 @@
+.sidebar {
+  height: 100%;
+  width: 15%;
+  min-width: 150px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  color: #fff;
+  font-weight: 500;
+  overflow-x: hidden;
+  background-size: cover;
+  background-position: center center;
+  background-image: url(../images/back_ground_image.jpg);
+}
+.navbar {
+  background-color: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  height: 50px;
+  width: 100%;
+}
+.icon {
+  width: 15%;
+  height: 15%;
+  margin: 2%;
+}
+.nav-link,.main-link {
+  margin-left: 20px;
+  font-size: 110%;
+  text-decoration: none;
+  color: white !important;
+}
+.main-link:visited {
+  text-decoration: none;
+  color: white !important;
+}
+.main-link:hover {
+  text-decoration: none;
+  color: white;
+}
+.main-link:active {
+  text-decoration: none;
+  color: white;
+}
+a, h5:hover {
+  text-decoration: none;
+  color: #2c1f30 !important;
+}
+
+.sidebar-ul>li:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-left: 5px solid white;
+  color: white;
+  padding-left: 15px;
+}
+.sidebar-ul {
+  padding-left: 0px;
+}
+
+.sidebar-li {
+  padding-left: 15px;
+}
+.brand-name {
+  font-family: 'Monoton', cursive;
+}
+
+.navbar {
+  background-size: cover;
+  background-position: top center;
+  background-image: url(../images/back_ground_image.jpg);
+}

@@ -1,18 +1,18 @@
-﻿let Points;
+let Points;
 async function getPoints(myGeoObjects) {
 
   Points = await fetch('http://84.201.153.211:8080/api/rinks?latitude=1&longitude=1&radius=10000')
     .then(response => response.json())
     .then(json => json.map(j => {
-        const obj = {
-          id: j.id,
-          coords: [j.latitude, j.longitude]
-        }
-        return obj;
-  }));
+      const obj = {
+        id: j.id,
+        coords: [j.latitude, j.longitude]
+      }
+      return obj;
+    }));
 
   Points.forEach(p => myGeoObjects.add(new ymaps.Placemark(p.coords)));
-    /*, {
+  /*, {
       balloonContentHeader: `${nameParse(p.name, p.web)}<br>` +
               `<b style="font-size:20px">&#9733;</b> <span>${p.rating.toFixed(1)}</span><hr>`,
       balloonContentBody: `<center><img src="../images/img.jpg" height="250" width="400"></center>` +
@@ -40,7 +40,7 @@ async function getInfo(point) {
   const info = await fetch(`http://84.201.153.211:8080/api/rink/${id}`) //HELP
     .then(response => response.json())
     .then(json => [json].map(j => {
-        const obj = {
+      const obj = {
         id: j.id,
         coords: point,
         name: j.name,
@@ -62,9 +62,9 @@ async function getInfo(point) {
   let firstGeoObject;
 
 
-  document.getElementsByClassName('card-image')[0].innerHTML = `<img src="../images/img${count}.jpg" alt="kek" style="width: 400px; height: 250px;" >`;
+  document.getElementsByClassName('card-image')[0].innerHTML = `<img src="../images/img${count}.jpg" alt="kek" style="width: 100%; height: auto;" >`;
   document.getElementById('name').innerHTML = `${nameParse(info[0].name,info[0].web)}`;
-  ymaps.geocode(point).then(async function (result) {
+  ymaps.geocode(point).then(async function(result) {
     firstGeoObject = result.geoObjects.get(0).getAddressLine();
     document.getElementById('address').innerHTML = `${firstGeoObject}`;
   });

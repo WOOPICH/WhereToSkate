@@ -1,54 +1,63 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--Fontawesome CDN-->
-	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-    <link href="loginPage.css" rel="stylesheet">
-    <title>Авторизация-Where2Skate</title>
-    <!-- Bootstrap -->
-    <link href="../css/bootstrap.css" rel="stylesheet">
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link href="loginPage.css" rel="stylesheet">
+  <title>Авторизация-Where2Skate</title>
+  <!-- Bootstrap -->
+  <link href="../css/bootstrap.css" rel="stylesheet">
+  <!--Fontawesome CDN-->
+  <script src="https://kit.fontawesome.com/2e38b560d7.js" crossorigin="anonymous"></script>
+</head>
 
-  <body class="body_loginPage">
-    <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute">
-      <div class="container">
-          <div class="navbar-wrapper" style="margin-top:70px">
-            <a class="navbar-brand main_name" style="margin-left:420px" href="../mapPage/mapPage.html">
-              <img src="../images/icon.jpg" class="d-inline-block align-top brand-icon" alt="">
-                Where2Skate
-            </a>
-          </div>
-      </div>
-    </nav>
+<body class="body_loginPage">
+  <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute">
     <div class="container">
-    	<div class="d-flex justify-content-center h-90">
-    		<div class="card">
-    			<div class="card-header">
-    				<h3>Sign In with Google</h3>
-    				<div class="d-flex justify-content-end social_icon">
-    					<span><i class="fab fa-google-plus-square"></i></span>
-    				</div>
-    			</div>
-    			<div class="card-body">
-    				<form>
-              <div class="form-group mg-btn">
-    						<input type="submit" value="Login" class="btn login_btn">
-    					</div>
-    				</form>
-    			</div>
-    		</div>
-    	</div>
+      <div class="navbar-wrapper" style="margin-top:70px;">
+        <a class="navbar-brand main_name" style="margin-left:420px" href="../mapPage/mapPage.html">
+          <div class="row">
+            <img src="../images/icon.jpg" class="d-inline-block align-top brand-icon" alt="">
+            <h2>Where2Skate</h2>
+          </div>
+        </a>
+      </div>
     </div>
+  </nav>
+  <div class="container">
+    <div class="d-flex justify-content-center h-90">
+      <div class="card">
+        <div class="card-header">
+          <h3>Sign In with Google</h3>
+          <div class="d-flex justify-content-end social_icon">
+            <span><i class="fab fa-google-plus-square"></i></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-group mg-btn">
+              <input type="button" value="Login" class="btn login_btn" onclick="home_page()">
+              <script>
+                function home_page()
+                {
+                     location.href = "../mapPage/mapPage.html";
+                }
+                </script>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../js/bootstrap.js"></script>
-  </body>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="../js/bootstrap.js"></script>
+</body>
+
 </html>

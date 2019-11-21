@@ -1,49 +1,12 @@
-body, html{
+body, html {
   background-color: #f7f7f8 !important;
   font-family: 'Montserrat', sans-serif;
 }
 
-.sidebar {
-    height: 100%;
-    width: 15%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    padding-top: 20px;
-    color: #fff;
-    font-weight: 500;
-    overflow-x: hidden;
-    background-size: cover;
-    background-position: center center;
-    background-image: url(../images/back_ground_image.jpg);
-}
-
-.navbar{
-  background-color: #FFFFFF !important;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  height: 50px;
-  width: 100%;
-}
-
-.icon{
-  width: 10%;
-  height: 10%;
-  margin: 2%;
-}
-
-.card-icon{
+.card-icon {
   width: 7%;
   height: 7%;
   margin: 2%;
-}
-
-.myfooter {
-  padding-top: 50px;
-  margin-bottom: 0px;
-  margin-left: 15%;
-  margin-right: 25%;
-  bottom: 0;
 }
 
 #map {
@@ -51,62 +14,7 @@ body, html{
   height: 500px;
 }
 
-.main-link {
-  margin-left: 5%
-  text-decoration:none;
-  color: white !important;
-}
-
-.main-link:visited {
-  text-decoration: none;
-  color: white !important;
-}
-
-.main-link:hover {
-  text-decoration: none;
-  color: white;
-}
-
-.main-link:active {
-  text-decoration: none;
-  color:white ;
-}
-
-a, h5:hover {
-  text-decoration: none;
-  color: #2c1f30 !important;
-}
-
-a, h5 {
-  text-decoration: none;
-  color: #2c1f30 !important;
-}
-
-ul>li:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-left: 5px solid white;
-    color: white;
-    padding-left: 15px;
-}
-
-.sidebar-ul{
-   padding-left: 0px;
-}
-
-.sidebar-li{
-  padding-left: 15px;
-}
-
-.brand-icon{
-  width:50px;
-  height:50px;
-  margin-top:10px;
-  margin-left: 10px;
-  border-radius: 100%;
-  display: inline-block;
-}
-
-.card{
+.card {
   margin-bottom: 1%;
   margin-top: 1%;
   margin-left: 25px;
@@ -116,18 +24,9 @@ ul>li:hover {
 
 .map-card {
   height: 100%;
-  width: 100%
-  position: fixed;
+  width: 100%;
   z-index: 1;
   margin-top: 80px;
   margin-left: 30px;
   margin-bottom: 0px;
-}
-
-.info{
-  width: 100px;
-}
-
-.brand-name{
-  font-family: 'Monoton', cursive;
 }

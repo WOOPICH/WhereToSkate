@@ -1,5 +1,5 @@
 ymaps.ready(init)
-async function init () {
+async function init() {
   const location = ymaps.geolocation
   const myMap = new ymaps.Map('map', {
     center: [55.76, 37.64],
@@ -10,7 +10,7 @@ async function init () {
   })
 
   // Получение местоположения и автоматическое отображение его на карте.
-  location.get({
+  /*location.get({
     mapStateAutoApply: false
   })
     .then(
@@ -28,7 +28,7 @@ async function init () {
       function (err) {
         console.log('Ошибка: ' + err)
       })
-
+  */
   // Создаем коллекцию геообъектов (Можно переделать в массив)
   const myGeoObjects = new ymaps.GeoObjectCollection({}, {
     strokeWidth: 4,
@@ -48,7 +48,7 @@ async function init () {
 
   // Центрирование экрана при нажатии на метку + добавление адреса к каждой точке
   for (let i = 0; i < myGeoObjects.getLength(); i++) {
-    newMyGeo[i].events.add('click',async function () {
+    newMyGeo[i].events.add('click', async function() {
       myMap.setCenter(newMyGeo[i].geometry.getCoordinates(), myMap.getZoom());
       await getInfo(newMyGeo[i].geometry.getCoordinates());
     });

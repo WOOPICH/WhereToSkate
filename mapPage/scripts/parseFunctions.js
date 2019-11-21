@@ -21,9 +21,12 @@ function webParse(web) {
 
 function isFree(free) {
   switch (free) {
-    case 0: return `Платный`;
-    case 1: return `Бесплатный`;
-    default: break;
+    case 0:
+      return `Платный`;
+    case 1:
+      return `Бесплатный`;
+    default:
+      break;
   }
 };
 
@@ -40,16 +43,23 @@ function Hours(hours) {
   let string = ``;
   for (let i = 0; i < hours.length; i++) {
     switch (hours[i]) {
-      case 'm': string += `Утро`; break;
-      case 'a': string += `День`; break;
-      case 'p': string += `Вечер`; break;
-      case 'n': string += `Ночь`; break;
+      case 'm':
+        string += `<i class="fas fa-coffee"></i>`;
+        break;
+      case 'a':
+        string += `<i class="fas fa-sun"></i>`;
+        break;
+      case 'p':
+        string += `<i class="fas fa-cloud-moon"></i>`;
+        break;
+      case 'n':
+        string += `<i class="fas fa-moon"></i>`;
+        break;
       default:
     }
     if (i != hours.length - 1) {
       string += `, `
-    }
-    else {
+    } else {
       string += ``
     }
   }
@@ -58,9 +68,13 @@ function Hours(hours) {
 
 function typeOf(type) {
   switch (type) {
-    case 'ai': return `Искусственный крытый`;
-    case 'ao': return `Искусственный открытый`;
-    case 'n': return `Натуральный`;
-    default: break;
+    case 'ai':
+      return `Искусственный крытый`;
+    case 'ao':
+      return `Искусственный открытый`;
+    case 'n':
+      return `Натуральный`;
+    default:
+      break;
   }
 };
